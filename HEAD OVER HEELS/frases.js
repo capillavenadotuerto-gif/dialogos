@@ -43,4 +43,20 @@ const frases = [
     de: 'In Ordnung.',
     es: 'En orden.',
   },
+  {
+    de: 'Ein Hausgott hat sich bei Baekjedang, Mokju, Gyeonggi-do eingenistet.',
+    es: 'Un dios de casa se ha en Baekjedang, Mokju, Gyeonggi-do anidado.',
+  },
+  {
+    de: 'Eine Frau Lim brachte 1980, im Jahr des Affen, den ältesten Sohn der Familie Geumcheon Kang zur Welt.',
+    es: 'Una señora Lim trajo en 1980, en el año del mono, al más viejo hijo de la familia Geumcheon Kang al mundo.',
+  },
+  {
+    de: 'Ich bete für die Heilung seiner unbekannten Krankheit.',
+    es: 'Yo rezo por la curación de su desconocida enfermedad.',
+  },
+  {
+    de: 'Liebe Götter und Geister, bitte nehmt meine Aufrichtigkeit an und lasst ihn schnellstmöglich gesund werden.',
+    es: 'Queridos dioses y espíritus, por favor aceptad mi sinceridad y dejad a él lo más rápido posible sano ponerse.',
+  },
 ]
