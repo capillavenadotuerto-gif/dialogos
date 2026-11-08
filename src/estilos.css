@@ -44,6 +44,69 @@ body {
   justify-content: flex-end;
 }
 
+.volver {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-right: auto;
+  color: var(--traduccion);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.volver:hover {
+  text-decoration: underline;
+}
+
+.titulo {
+  margin: clamp(0.5rem, 2vw, 1.25rem) 0 0;
+  font-size: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.dialogos {
+  margin: clamp(0.75rem, 3vw, 1.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dialogos li + li {
+  border-top: 1px solid var(--separacion);
+}
+
+.dialogos a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  padding-block: 0.75rem;
+  color: var(--texto);
+  font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.dialogos a::after {
+  content: '→' / '';
+  color: var(--traduccion);
+}
+
+.dialogos a:hover {
+  text-decoration: underline;
+}
+
+.volver:focus-visible,
+.dialogos a:focus-visible {
+  border-radius: 0.25rem;
+  outline: 2px solid var(--texto);
+  outline-offset: 2px;
+}
+
 .interruptor {
   display: inline-flex;
   align-items: center;

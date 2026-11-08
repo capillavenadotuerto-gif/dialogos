@@ -2,21 +2,60 @@ const raiz = document.documentElement
 const interruptor = document.querySelector('.interruptor')
 const principal = document.querySelector('main')
 
-function crearParrafo(clase, texto) {
-  const parrafo = document.createElement('p')
-  parrafo.className = clase
-  parrafo.textContent = texto
-  return parrafo
+function crearElemento(etiqueta, clase, texto = '') {
+  const elemento = document.createElement(etiqueta)
+  elemento.className = clase
+  elemento.textContent = texto
+  return elemento
 }
 
-for (const { de, es } of frases) {
-  const aleman = crearParrafo('aleman', de)
-  aleman.lang = 'de'
+function mostrarInicio() {
+  const lista = crearElemento('ul', 'dialogos')
 
-  const frase = document.createElement('div')
-  frase.className = 'frase'
-  frase.append(aleman, crearParrafo('traduccion', es))
-  principal.append(frase)
+  for (const dialogo of dialogos) {
+    const enlace = crearElemento('a', '', dialogo)
+    enlace.href = `?dialogo=${encodeURIComponent(dialogo)}`
+
+    const elemento = document.createElement('li')
+    elemento.append(enlace)
+    lista.append(elemento)
+  }
+
+  principal.append(crearElemento('h1', 'titulo', 'Diálogos'), lista)
+}
+
+function mostrarDialogo(dialogo) {
+  document.title = dialogo
+
+  const volver = crearElemento('a', 'volver', '← Diálogos')
+  volver.href = 'index.html'
+  document.querySelector('.barra').prepend(volver)
+
+  principal.append(crearElemento('h1', 'titulo', dialogo))
+
+  const datos = document.createElement('script')
+  datos.src = `BIBLIOTECA/${encodeURIComponent(dialogo)}/frases.js`
+  datos.onload = mostrarFrases
+  document.body.append(datos)
+}
+
+function mostrarFrases() {
+  for (const { de, es } of frases) {
+    const aleman = crearElemento('p', 'aleman', de)
+    aleman.lang = 'de'
+
+    const frase = crearElemento('div', 'frase')
+    frase.append(aleman, crearElemento('p', 'traduccion', es))
+    principal.append(frase)
+  }
+}
+
+const dialogoElegido = new URLSearchParams(location.search).get('dialogo')
+
+if (dialogos.includes(dialogoElegido)) {
+  mostrarDialogo(dialogoElegido)
+} else {
+  mostrarInicio()
 }
 
 interruptor.setAttribute('aria-checked', raiz.dataset.tema === 'oscuro')

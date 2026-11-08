@@ -1,6 +1,8 @@
 # Web de diálogos en alemán
 
-Web estática en HTML, CSS y JavaScript, sin frameworks ni dependencias. Cada frase se muestra en alemán, con su traducción debajo y una separación antes de la siguiente, sin indicar quién la dice. Las frases están en `HEAD OVER HEELS/frases.js`.
+Web estática en HTML, CSS y JavaScript, sin frameworks ni dependencias. La página de inicio lista los diálogos y cada uno abre su propia página, donde cada frase se muestra en alemán, con su traducción debajo y una separación antes de la siguiente, sin indicar quién la dice.
+
+Cada diálogo tiene una carpeta en `BIBLIOTECA/` con su `source.txt` y su `frases.js`, y el nombre de la carpeta es su título. `BIBLIOTECA/biblioteca.js` lista las carpetas que aparecen en la página de inicio. Para crear un diálogo nuevo basta con crear su `frases.js` y añadir el nombre de la carpeta a esa lista.
 
 ## Traducciones
 
@@ -16,7 +18,7 @@ Las traducciones son lo más literalmente fieles posible al alemán y respetan t
 
 ## Incorporación de frases
 
-Escribo las frases de los diálogos en `source.txt`, una por línea. Cada vez que se lea el archivo se hace el proceso completo sin esperar a que lo pida: añadir a la app las líneas nuevas que haya, borrar las ya añadidas y dejar siempre las tres últimas.
+Escribo las frases de cada diálogo en el `source.txt` de su carpeta, una por línea. Cada vez que se lea el archivo se hace el proceso completo sin esperar a que lo pida: añadir a la app las líneas nuevas que haya, borrar las ya añadidas y dejar siempre las tres últimas.
 
 1. Comparar las primeras líneas de `source.txt` con las últimas frases de `frases.js`, donde pueden estar corregidas, y no volver a añadir las que ya estén. Son las tres líneas que quedaron la vez anterior.
 
