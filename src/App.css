@@ -1,0 +1,118 @@
+:root {
+  color-scheme: light;
+  --fondo: #e8e2d6;
+  --texto: #2b2722;
+  --traduccion: #5c564d;
+  --separacion: #c9c2b4;
+  --pista: #827b70;
+  --boton: #f5f1e8;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root[data-tema='oscuro'] {
+  color-scheme: dark;
+  --fondo: #22252a;
+  --texto: #d9d5cc;
+  --traduccion: #a39e93;
+  --separacion: #3a3e45;
+  --pista: #8fb0a0;
+  --boton: #22252a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+.pagina {
+  width: min(100%, 42rem);
+  margin-inline: auto;
+  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.25rem, 5vw, 2rem)
+    clamp(1rem, 5vw, 3rem);
+}
+
+.barra {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.interruptor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  background: none;
+  color: var(--traduccion);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.interruptor:focus-visible {
+  outline: 2px solid var(--texto);
+  outline-offset: 4px;
+}
+
+.pista {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--pista);
+}
+
+.pista::after {
+  content: '';
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: var(--boton);
+}
+
+.interruptor[aria-checked='true'] .pista::after {
+  transform: translateX(1.25rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pista::after {
+    transition: transform 0.15s;
+  }
+}
+
+.frase {
+  padding-block: clamp(1.25rem, 4vw, 2rem);
+}
+
+.frase + .frase {
+  border-top: 1px solid var(--separacion);
+}
+
+.aleman {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.35;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.traduccion {
+  margin: 0.5rem 0 0;
+  color: var(--traduccion);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.5;
+}
