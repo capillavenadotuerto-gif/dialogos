@@ -10,9 +10,19 @@
         document.documentElement.dataset.tema = 'oscuro'
       }
     </script>
+    <link rel="stylesheet" href="src/estilos.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="pagina">
+      <header class="barra">
+        <button type="button" role="switch" aria-checked="false" class="interruptor">
+          <span>Modo oscuro</span>
+          <span class="pista" aria-hidden="true"></span>
+        </button>
+      </header>
+      <main></main>
+    </div>
+    <script src="HEAD%20OVER%20HEELS/frases.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
