@@ -1,1 +1,1 @@
-const dialogos = ['HEAD OVER HEELS', "VICTOR BRINGT'S"]
+const dialogos = ['HEAD OVER HEELS', "VIKTOR BRINGT'S"]

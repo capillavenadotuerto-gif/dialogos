@@ -22,9 +22,9 @@ Escribo las frases de cada diálogo en el `source.txt` de su carpeta, una por l�
 
 1. Comparar las primeras líneas de `source.txt` con las últimas frases de `frases.js`, donde pueden estar corregidas, y no volver a añadir las que ya estén. Son las tres líneas que quedaron la vez anterior.
 
-2. Corregir los errores ortográficos de cada frase.
+2. Corregir los errores ortográficos de cada frase. No puedo escribir la ß con mi teclado y pongo `ss` en su lugar (`weiss`), así que hay que cambiarla por ß donde corresponda. Si la línea trae una etiqueta de quién habla (`[Kundin]`), se quita.
 
-3. Añadir las frases nuevas al final de `frases.js`, en el orden de `source.txt` y con su traducción.
+3. Añadir las frases nuevas al final de `frases.js`, en el orden de `source.txt` y con su traducción. Cada frase se añade también a la sección Diálogos de la web de `AL`, como indica la sección Diálogos de su `CLAUDE.md`.
 
 4. Borrar de `source.txt` las frases ya añadidas, dejando siempre las tres últimas tal como las escribí, porque me sirven de referencia para saber por dónde voy de la copia.
 
